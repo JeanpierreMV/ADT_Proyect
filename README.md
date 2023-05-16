@@ -18,7 +18,7 @@ _layout.cshtml
 
 Controller
 public IActionResult Index(){
-       string urlModelo3D = "https://azustore07.blob.core.windows.net/modelo3d/index.html";
+       string urlModelo3D = "x";
     ViewBag.UrlModelo3D = urlModelo3D;
     
     return View();
