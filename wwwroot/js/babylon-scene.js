@@ -1,48 +1,39 @@
 window.addEventListener('DOMContentLoaded', function () {
-    // Obtén el elemento del lienzo (canvas) por su ID
-    var canvas = document.getElementById("renderCanvas");
-
-    // Crea el motor de Babylon.js
+    // Crear el lienzo (canvas) de Babylon.js
+    var canvas = document.getElementById('renderCanvas');
     var engine = new BABYLON.Engine(canvas, true);
-
-    // Crea la escena
+  
+    // Crear la escena principal
     var createScene = function () {
-        // Crea una escena vacía
-        var scene = new BABYLON.Scene(engine);
-
-        // Crea una cámara y colócala en la posición deseada
-        var camera = new BABYLON.FreeCamera("camera", new BABYLON.Vector3(0, 5, -10), scene);
-
-        // Apunta la cámara hacia el origen de la escena
-        camera.setTarget(BABYLON.Vector3.Zero());
-
-        // Habilita los controles de movimiento de la cámara
-        camera.attachControl(canvas, true);
-
-        // Agrega luces a la escena
-        var light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0), scene);
-
-        // Crea una esfera en la escena
-        var sphere = BABYLON.MeshBuilder.CreateSphere("sphere", { diameter: 2 }, scene);
-
-        // Asigna un material a la esfera
-        var material = new BABYLON.StandardMaterial("material", scene);
-        material.diffuseColor = new BABYLON.Color3(0.5, 0.5, 1);
-        sphere.material = material;
-
-        return scene;
+      var scene = new BABYLON.Scene(engine);
+  
+      // Crear una cámara
+      var camera = new BABYLON.ArcRotateCamera('camera', 0, 0, 0, BABYLON.Vector3.Zero(), scene);
+      camera.setPosition(new BABYLON.Vector3(0, 5, -10));
+      camera.attachControl(canvas, true);
+  
+      // Crear una luz
+      var light = new BABYLON.HemisphericLight('light', new BABYLON.Vector3(0, 1, 0), scene);
+  
+      // Cargar el modelo 3D desde Azure Blob Storage
+      var modelUrl = 'https://azustore07.blob.core.windows.net/modelo3d/index.html.glb';
+      BABYLON.SceneLoader.ImportMesh('', modelUrl, '', scene, function (meshes) {
+        // Hacer algo con los meshes del modelo 3D cargado, si es necesario
+      });
+  
+      return scene;
     };
-
-    // Crea la escena
+  
+    // Crear la escena
     var scene = createScene();
-
-    // Inicia la animación del motor de Babylon.js
+  
+    // Iniciar el ciclo de renderizado de Babylon.js
     engine.runRenderLoop(function () {
-        scene.render();
+      scene.render();
     });
-
-    // Maneja el redimensionamiento de la ventana
+  
+    // Ajustar el tamaño del lienzo cuando la ventana del navegador cambia de tamaño
     window.addEventListener('resize', function () {
-        engine.resize();
+      engine.resize();
     });
-});
+  });
