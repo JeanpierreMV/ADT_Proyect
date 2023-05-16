@@ -35,3 +35,5 @@ builder.Services.AddCors(options =>
     });
 });
 app.UseCors();
+
+pr
