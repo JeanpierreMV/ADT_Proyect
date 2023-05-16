@@ -1,4 +1,5 @@
-﻿@{
+﻿@model dynamic
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -7,7 +8,12 @@
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
-<canvas id="renderCanvas"></canvas>
+@* <canvas id="renderCanvas"></canvas> *@
+ <div class="text-center">
+    <h1>Mi Página Web con Modelo 3D</h1>
+    <iframe src="@ViewBag.UrlModelo3D" width="800" height="600"></iframe>
+</div>
+
 
 
 @section Scripts {

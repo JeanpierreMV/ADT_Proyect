@@ -4,6 +4,7 @@ window.addEventListener('DOMContentLoaded', function () {
     var engine = new BABYLON.Engine(canvas, true);
   
     // Crear la escena principal
+    const sceneId = "miEscena";
     var createScene = function () {
       var scene = new BABYLON.Scene(engine);
   
@@ -16,7 +17,7 @@ window.addEventListener('DOMContentLoaded', function () {
       var light = new BABYLON.HemisphericLight('light', new BABYLON.Vector3(0, 1, 0), scene);
   
       // Cargar el modelo 3D desde Azure Blob Storage
-      var modelUrl = 'https://azustore07.blob.core.windows.net/modelo3d/index.html.glb';
+      var modelUrl = '';
       BABYLON.SceneLoader.ImportMesh('', modelUrl, '', scene, function (meshes) {
         // Hacer algo con los meshes del modelo 3D cargado, si es necesario
       });

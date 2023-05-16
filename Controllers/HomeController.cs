@@ -15,7 +15,10 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+       string urlModelo3D = "";
+    ViewBag.UrlModelo3D = urlModelo3D;
+    
+    return View();
     }
 
     public IActionResult Privacy()

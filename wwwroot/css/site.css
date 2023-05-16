@@ -16,3 +16,7 @@ html {
 body {
   margin-bottom: 60px;
 }
+.modelo3d-iframe {
+  max-width: 200px;
+  max-height: 300px;
+}
