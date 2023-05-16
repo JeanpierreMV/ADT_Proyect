@@ -17,12 +17,15 @@ _layout.cshtml
 </head>
 
 Controller
+
 public IActionResult Index(){
        string urlModelo3D = "x";
     ViewBag.UrlModelo3D = urlModelo3D;
     
     return View();
 }
+
+
 program
 
 builder.Services.AddCors(options =>
@@ -34,6 +37,7 @@ builder.Services.AddCors(options =>
                .AllowAnyHeader();
     });
 });
+
 app.UseCors();
 
-pr
+
