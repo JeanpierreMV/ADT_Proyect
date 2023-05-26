@@ -1,33 +1,38 @@
-{
-    "@id": "dtmi:com:example:SolarPanel;1",
-    "displayName": "Solar Panel",
-    "@type": "Interface",
-    "description": "A digital twin model for a solar panel.",
-    "contents": [
+ 
       {
-        "@type": "Property",
-        "name": "voltage",
-        "displayName": "Voltage",
-        "schema": "double"
-      },
-      {
-        "@type": "Property",
-        "name": "current",
-        "displayName": "Current",
-        "schema": "double"
-      },
-      {
-        "@type": "Property",
-        "name": "power",
-        "displayName": "Power",
-        "schema": "double"
-      },
-      {
-        "@type": "Property",
-        "name": "temperature",
-        "displayName": "Temperature",
-        "schema": "double"
+        "@id": "dtmi:com:example:SolarPanel;1",
+        "displayName": "Solar Panel",
+        "@type": "Interface",
+        "description": "A digital twin model for a solar panel.",
+        "contents": [
+          {
+            "@type": "Property",
+            "name": "voltage",
+            "displayName": "Voltage",
+            "schema": "double"
+          },
+          {
+            "@type": "Property",
+            "name": "current",
+            "displayName": "Current",
+            "schema": "double"
+          },
+          {
+            "@type": "Property",
+            "name": "power",
+            "displayName": "Power",
+            "schema": "double"
+          },
+          {
+            "@type": "Property",
+            "name": "temperature",
+            "displayName": "Temperature",
+            "schema": "double"
+          }
+        ],
+        "@context": "dtmi:dtdl:context;2"
       }
-    ],
-    "@context": "dtmi:dtdl:context;2"
-  }
+   
+ 
+ 
+

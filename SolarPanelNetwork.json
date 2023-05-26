@@ -1,0 +1,19 @@
+{
+    "@id": "dtmi:com:example:SolarPanelNetwork;1",
+    "@type": "Interface",
+    "displayName": "Solar Panel Network",
+    "description": "A digital twin model for a network of solar panels.",
+    "contents": [
+      {
+        "@type": "Relationship",
+        "name": "solarPanels",
+        "displayName": "Solar Panels",
+        "target": "dtmi:com:example:SolarPanel;1"
+      }
+    ],
+    "@context": "dtmi:dtdl:context;2"
+  }
+ 
+
+
+
